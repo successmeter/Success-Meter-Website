@@ -10,4 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('open');
     });
   }
+
+  // Netlify Identity invite/recovery links land on the homepage (or whichever
+  // page the email points at) with a #invite_token=... or #recovery_token=...
+  // fragment. This catches that token, opens the "set your password" popup,
+  // and sends the user to /admin once they're logged in.
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', (user) => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          window.location.href = '/admin/';
+        });
+      }
+    });
+
+    const hash = window.location.hash || '';
+    if (hash.includes('confirmation_token') || hash.includes('invite_token') || hash.includes('recovery_token') || hash.includes('access_token')) {
+      window.netlifyIdentity.open();
+    }
+  }
 });
