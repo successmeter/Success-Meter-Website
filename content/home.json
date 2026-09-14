@@ -1,0 +1,23 @@
+{
+  "hero_heading": "The one & only revolutionary restaurant market share product",
+  "hero_subtitle": "DATA is KNOWLEDGE/POWER",
+  "hero_image": "assets/images/Mosaic-screen-shot.png",
+  "stats_line1_bold": "50,000+",
+  "stats_line1_rest": "restaurants in Australia need the solution to the problem that:",
+  "stats_line2": "There is NO DATA/Knowledge/Power",
+  "stats_line3": "To COMPARE performance",
+  "features": [
+    {
+      "title": "Revenue Performance Benchmarking",
+      "description": "Compare your revenue performance against the market and industry segment, and track your own historical trends."
+    },
+    {
+      "title": "Web Performance Benchmarking",
+      "description": "See how your website, digital marketing and social media performance stacks up against your competitors."
+    },
+    {
+      "title": "Restaurant RevMAX",
+      "description": "Forecast occupancy and revenue, and optimise pricing and capacity with data-driven recommendations."
+    }
+  ]
+}

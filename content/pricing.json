@@ -1,0 +1,59 @@
+{
+  "intro_heading": "Extremely valuable information at a low cost, even suitable for small restaurants",
+  "intro_text": "The idea behind Success Meter is to empower Restaurant Industry with Data & Information, to be able to make enriching Sales, Marketing, Operations, Pricing & Capacity optimisation decisions. Hence we are thinking low price high scale, not high price with niche.",
+  "steps_heading": "6 days and you're all set",
+  "note_text": "Success Meter will not have any implementation fee & will also not have restriction of number of users. \"Just one monthly subscription fee per restaurant.\"",
+  "plans": [
+    {
+      "title": "Revenue Performance Benchmarking",
+      "price": 169,
+      "period": "per month",
+      "features": [
+        "\u25cf Compare your performance vs Market's (Revenue opportunity of at least $8,000 per month)",
+        "\u25cf Compare your performance vs Industry segment's (Revenue opportunity of least $4,000 per month)",
+        "\u25cf Improve against your historical performance by trends analyses (worth $2000 per month)"
+      ],
+      "total_value": "Total Value ($14,000 per month)",
+      "cta_label": "Book a demo",
+      "disclaimer": "The value of benefits have been measured through a comprehensive analytics process"
+    },
+    {
+      "title": "Web Performance Benchmarking",
+      "price": 69,
+      "period": "per month",
+      "features": [
+        "\u25cf Compare your website performance vs Market's (Revenue opportunity of at least $1,000 per month)",
+        "\u25cf Compare your e-marketing performance vs Industry segment's (Revenue opportunity of at least $2,000 per month)",
+        "\u25cf Compare your social media performance vs Industry segment's (Revenue opportunity of at least $1,000 per month)",
+        "\u25cf Improve your Brand Value (worth more than $10,000 per month)"
+      ],
+      "total_value": "Total Value ($14,000 per month)",
+      "cta_label": "Book a demo",
+      "disclaimer": "The value of benefits have been measured through a comprehensive analytics process"
+    },
+    {
+      "title": "Restaurant RevMAX",
+      "price": 249,
+      "period": "per month",
+      "features": [
+        "\u25cf Forecast of Occupancy & Revenue based on historical trend analysis & current demand pattern (Revenue opportunity of at least $15,000 per month)",
+        "\u25cf Pricing & Payment policy Optimisation (Revenue opportunity of least $15,000 per month)",
+        "\u25cf Capacity Optimisation (Revenue opportunity of least $15,000 per month)"
+      ],
+      "total_value": "Total Value ($45,000 per month)",
+      "cta_label": "Book a demo",
+      "disclaimer": "The value of benefits have been measured through a comprehensive analytics process"
+    },
+    {
+      "title": "Performance Consulting",
+      "price": null,
+      "period": "Contact us",
+      "features": [
+        "Contact us for a chat here with our consultant"
+      ],
+      "total_value": "",
+      "cta_label": "Book a Meeting",
+      "disclaimer": ""
+    }
+  ]
+}

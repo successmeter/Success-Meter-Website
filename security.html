@@ -8,13 +8,13 @@
 <link rel="icon" href="assets/images/logo.jpg" />
 <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body data-page="security">
 
 <header class="site-header">
   <div class="container">
     <a href="index.html" class="brand">
-      <img src="assets/images/logo.jpg" alt="Success Meter" />
-      <span class="brand-name">Success<br />Meter</span>
+      <img src="assets/images/logo.jpg" alt="Success Meter" data-field="logo" />
+      <span class="brand-name" data-field="site_name">Success<br />Meter</span>
     </a>
     <nav class="site-nav">
       <a href="index.html" class="nav-link">Home</a>
@@ -29,14 +29,14 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>Security and privacy are cornerstones of our business</h1>
-    <p class="lead">Our highest priority is keeping the data of our customers secure. We deploy the best-in-class organizational, architectural, and operational measures to make sure of that.</p>
+    <h1 data-field="hero_heading">Security and privacy are cornerstones of our business</h1>
+    <p class="lead" data-field="hero_lead">Our highest priority is keeping the data of our customers secure. We deploy the best-in-class organizational, architectural, and operational measures to make sure of that.</p>
   </div>
 </section>
 
 <div class="container">
   <div class="card-panel">
-    <div class="feature-grid">
+    <div class="feature-grid" data-field="feature_cards">
       <div class="feature-card">
         <img src="assets/images/security_cover_17687346da.svg" alt="" />
         <h3>Security and privacy are cornerstones of our business</h3>
@@ -63,7 +63,7 @@
       <div class="accordion-header">Privacy</div>
       <div class="accordion-content">
         <div class="accordion-content-inner">
-          <p>Success Meter privacy program was founded on strict policies and procedures regarding access, use, disclosure, transfer and other processing of customer data. The core of our privacy program is that Success Meter employees never access or process customer data unless it is in accordance with a contractual agreement or at the direction of the customer.</p>
+          <p data-field="privacy_text">Success Meter privacy program was founded on strict policies and procedures regarding access, use, disclosure, transfer and other processing of customer data. The core of our privacy program is that Success Meter employees never access or process customer data unless it is in accordance with a contractual agreement or at the direction of the customer.</p>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
       <div class="accordion-header">Network</div>
       <div class="accordion-content">
         <div class="accordion-content-inner">
-          <div class="feature-grid" style="margin-top:0;">
+          <div class="feature-grid" style="margin-top:0;" data-field="network_cards">
             <div class="feature-card">
               <img src="assets/images/application_3d86446c9b.svg" alt="" />
               <h3>Vulnerability Assessments</h3>
@@ -113,16 +113,16 @@
   <div class="container">
     <div class="footer-top">
       <a href="index.html" class="brand">
-        <img src="assets/images/logo.jpg" alt="Success Meter" />
-        <span class="brand-name">Success Meter</span>
+        <img src="assets/images/logo.jpg" alt="Success Meter" data-field="logo" />
+        <span class="brand-name" data-field="site_name">Success Meter</span>
       </a>
       <div class="footer-contact">
-        <p>hello@successmeter.com.au</p>
-        <p>+61 430 749 700</p>
+        <p data-field="email">hello@successmeter.com.au</p>
+        <p data-field="phone">+61 430 749 700</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; Copyright 2024 Success Meter, All rights reserved.</p>
+      <p data-field="footer_copyright">&copy; Copyright 2024 Success Meter, All rights reserved.</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms &amp; Conditions</a>
@@ -132,5 +132,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/content.js"></script>
 </body>
 </html>

@@ -1,0 +1,126 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# After deploying to Netlify, enable "Identity" and "Git Gateway" in
+# Site settings > Identity, then invite yourself as a user. Log in at
+# yoursite.com/admin to edit content.
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "settings"
+        label: "Global Settings"
+        file: "content/settings.json"
+        fields:
+          - { label: "Site Name", name: "site_name", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Contact Phone", name: "phone", widget: "string" }
+          - { label: "Booking / Scheduling URL (zcal, Calendly, etc.)", name: "booking_url", widget: "string", required: false, hint: "Leave blank to keep the default #demo anchor link." }
+          - { label: "Footer Copyright Text", name: "footer_copyright", widget: "string" }
+
+  - name: "home"
+    label: "Home Page"
+    files:
+      - name: "home"
+        label: "Home Page Content"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "Hero Image", name: "hero_image", widget: "image" }
+          - { label: "Stats Line 1 (Bold Part)", name: "stats_line1_bold", widget: "string" }
+          - { label: "Stats Line 1 (Rest)", name: "stats_line1_rest", widget: "string" }
+          - { label: "Stats Line 2", name: "stats_line2", widget: "string" }
+          - { label: "Stats Line 3", name: "stats_line3", widget: "string" }
+          - label: "Feature Cards"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "solutions"
+    label: "Solutions Page"
+    files:
+      - name: "solutions"
+        label: "Solutions Page Content"
+        file: "content/solutions.json"
+        fields:
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Lead Line 1", name: "hero_lead1", widget: "string" }
+          - { label: "Hero Lead Line 2 (Bold Part)", name: "hero_lead2_bold", widget: "string" }
+          - { label: "Hero Lead Line 2 (Rest)", name: "hero_lead2_rest", widget: "text" }
+          - label: "Solutions"
+            name: "solutions"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+          - { label: "Consulting Intro", name: "consulting_intro", widget: "string" }
+          - label: "Consulting Experience Bullets"
+            name: "consulting_experience"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Consulting Offer Intro", name: "consulting_offer_intro", widget: "string" }
+          - label: "Consulting Offer Bullets"
+            name: "consulting_offers"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+
+  - name: "security"
+    label: "Security Page"
+    files:
+      - name: "security"
+        label: "Security Page Content"
+        file: "content/security.json"
+        fields:
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Lead", name: "hero_lead", widget: "text" }
+          - label: "Top Feature Cards"
+            name: "feature_cards"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Privacy Section Text", name: "privacy_text", widget: "text" }
+          - label: "Network Section Cards"
+            name: "network_cards"
+            widget: "list"
+            fields:
+              - { label: "Icon", name: "icon", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "pricing"
+    label: "Pricing Page"
+    files:
+      - name: "pricing"
+        label: "Pricing Page Content"
+        file: "content/pricing.json"
+        fields:
+          - { label: "Intro Heading", name: "intro_heading", widget: "string" }
+          - { label: "Intro Text", name: "intro_text", widget: "text" }
+          - { label: "Steps Heading", name: "steps_heading", widget: "string" }
+          - { label: "Note Text", name: "note_text", widget: "text" }
+          - label: "Plans"
+            name: "plans"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Price (leave blank for 'Contact us' plans)", name: "price", widget: "number", required: false, value_type: "int" }
+              - { label: "Period Label", name: "period", widget: "string" }
+              - label: "Features"
+                name: "features"
+                widget: "list"
+                field: { label: "Feature", name: "feature", widget: "string" }
+              - { label: "Total Value Line", name: "total_value", widget: "string", required: false }
+              - { label: "Button Label", name: "cta_label", widget: "string" }
+              - { label: "Disclaimer", name: "disclaimer", widget: "string", required: false }

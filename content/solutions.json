@@ -1,0 +1,35 @@
+{
+  "hero_heading": "Success Meter",
+  "hero_lead1": "DATA is KNOWLEDGE/POWER",
+  "hero_lead2_bold": "50,000+",
+  "hero_lead2_rest": "restaurants in Australia need the solution to the problem that there is NO DATA/Knowledge/Power to COMPARE performance.",
+  "solutions": [
+    {
+      "title": "Revenue Performance Benchmarking\u2122",
+      "description": "Success Meter's Revenue Performance Benchmarking delivers the Restaurant- and portfolio-level insights needed to make smart, real-time decisions and optimize strategies across functions of sales & marketing, performance management, operations, finance and development.",
+      "cta_label": "Schedule a demo"
+    },
+    {
+      "title": "Web Performance Benchmarking\u2122",
+      "description": "Success Meter's Web Performance Benchmarking compares your website, digital marketing and social media performance against the market & industry segments, to determine areas of focus & provides significant help shape informed digital strategies.",
+      "cta_label": "Schedule a demo"
+    },
+    {
+      "title": "Restaurant RevMAX\u2122",
+      "description": "Success Meter's Revenue management product empowers you by applying data and analytics to predict demand so that you can make informed decisions to create & adjust Promotion strategies, Pricing Strategies, Capacity Optimisation Strategies, and Market Segmentation Strategies.",
+      "cta_label": "Schedule a demo"
+    }
+  ],
+  "consulting_intro": "Team at Success Meter has an extensive hospitality experience in:",
+  "consulting_experience": [
+    "Strategic planning for Sales & Product optimisation, & revenue maximisation.",
+    "Trends analyses, forecasting & budgeting.",
+    "Market Segment & Distribution Management.",
+    "Digital & Conventional Marketing strategies & management."
+  ],
+  "consulting_offer_intro": "Hence we provide consulting solutions in:",
+  "consulting_offers": [
+    "Transformation Consulting: Enhance Revenue Capabilities & Change readiness (SMTC package).",
+    "Commercial Performance Center: Outsource Product Development, Financial Management & Marketing Functions (SMCPC packages)."
+  ]
+}

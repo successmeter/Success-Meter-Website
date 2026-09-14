@@ -1,0 +1,34 @@
+{
+  "hero_heading": "Security and privacy are cornerstones of our business",
+  "hero_lead": "Our highest priority is keeping the data of our customers secure. We deploy the best-in-class organizational, architectural, and operational measures to make sure of that.",
+  "feature_cards": [
+    {
+      "icon": "assets/images/security_cover_17687346da.svg",
+      "title": "Security and privacy are cornerstones of our business",
+      "description": "Our highest priority is keeping the data of our customers secure. We deploy the best-in-class organizational, architectural, and operational measures to make sure of that."
+    },
+    {
+      "icon": "assets/images/identity_7a412c0673.svg",
+      "title": "Identity management",
+      "description": "We ensure that only right people and approved devices can access your company's information in Success Meter with features like single sign-on, domain claiming and multi-factor authentication."
+    },
+    {
+      "icon": "assets/images/protection_279fe009c0.svg",
+      "title": "Data protection",
+      "description": "By default, Success Meter encrypts data at rest and data in transit for all of our customers. Our data protection procedures make certain it would take several lifetimes to decrypt an account."
+    }
+  ],
+  "privacy_text": "Success Meter privacy program was founded on strict policies and procedures regarding access, use, disclosure, transfer and other processing of customer data. The core of our privacy program is that Success Meter employees never access or process customer data unless it is in accordance with a contractual agreement or at the direction of the customer.",
+  "network_cards": [
+    {
+      "icon": "assets/images/application_3d86446c9b.svg",
+      "title": "Vulnerability Assessments",
+      "description": "Success Meter contracts with third-party cyber-security experts to conduct independent analysis comprising of internal and external network, system, and application vulnerability scans and assessments. We implement top class security safeguards to ensure system stability and penetration protection."
+    },
+    {
+      "icon": "assets/images/network_256fc0c7c4.svg",
+      "title": "Application",
+      "description": "We perform third-party application-level security vulnerability assessment of our system on a regular basis. The experts exercise testing procedures to identify standard and advanced web application security vulnerabilities."
+    }
+  ]
+}
