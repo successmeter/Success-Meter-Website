@@ -51,21 +51,24 @@ function el(tag, attrs = {}, children = []) {
   return node;
 }
 
-// Turns text like "DATA is KNOWLEDGE/POWER" into a looping typewriter effect:
-// types "DATA is KNOWLEDGE", deletes just the last word, types "DATA is POWER", loops forever.
+// Finds a "/"-separated word token (e.g. "DATA/Knowledge/Power") anywhere inside a piece of
+// text and turns it into a looping typewriter effect: types the first word, deletes it, types
+// the next word, deletes it, and so on forever. Everything before/after the token is kept as
+// static text.
 function applyTypewriter(node, text) {
   if (!text) return;
 
-  // Split on "/" to find the alternating words (e.g. "KNOWLEDGE" / "POWER").
-  const segments = text.split('/').map((s) => s.trim()).filter(Boolean);
-  if (segments.length < 2) {
+  // A "token" is a run of non-space characters containing at least one "/".
+  const match = text.match(/\S*\/\S+(?:\/\S+)*/);
+  if (!match) {
     node.textContent = text;
     return;
   }
 
-  const firstWords = segments[0].split(' ');
-  const loopWords = [firstWords[firstWords.length - 1], ...segments.slice(1)];
-  const prefix = firstWords.slice(0, -1).join(' ') + (firstWords.length > 1 ? ' ' : '');
+  const token = match[0];
+  const prefix = text.slice(0, match.index);
+  const suffix = text.slice(match.index + token.length);
+  const loopWords = token.split('/').map((s) => s.trim()).filter(Boolean);
 
   node.textContent = '';
   const prefixSpan = document.createTextNode(prefix);
@@ -73,9 +76,11 @@ function applyTypewriter(node, text) {
   const cursorSpan = document.createElement('span');
   cursorSpan.className = 'typewriter-cursor';
   cursorSpan.textContent = '|';
+  const suffixSpan = document.createTextNode(suffix);
   node.appendChild(prefixSpan);
   node.appendChild(wordSpan);
   node.appendChild(cursorSpan);
+  node.appendChild(suffixSpan);
 
   const TYPE_SPEED = 110;
   const DELETE_SPEED = 60;
@@ -134,7 +139,7 @@ function renderHome(data) {
     stats1.appendChild(el('strong', {}, [document.createTextNode(data.stats_line1_bold)]));
     stats1.appendChild(document.createTextNode(' ' + data.stats_line1_rest));
   }
-  if (stats2) stats2.textContent = data.stats_line2;
+  if (stats2) applyTypewriter(stats2, data.stats_line2);
   if (stats3) stats3.textContent = data.stats_line3;
 
   if (featureGrid && Array.isArray(data.features)) {
@@ -162,11 +167,14 @@ function renderSolutions(data) {
   const consultingOffers = document.querySelector('[data-field="consulting_offers"]');
 
   if (heading) heading.textContent = data.hero_heading;
-  if (lead1) lead1.textContent = data.hero_lead1;
+  if (lead1) applyTypewriter(lead1, data.hero_lead1);
   if (lead2) {
     lead2.innerHTML = '';
     lead2.appendChild(el('strong', {}, [document.createTextNode(data.hero_lead2_bold)]));
-    lead2.appendChild(document.createTextNode(' ' + data.hero_lead2_rest));
+    lead2.appendChild(document.createTextNode(' '));
+    const restSpan = document.createElement('span');
+    lead2.appendChild(restSpan);
+    applyTypewriter(restSpan, data.hero_lead2_rest);
   }
 
   if (list && Array.isArray(data.solutions)) {
