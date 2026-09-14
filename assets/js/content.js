@@ -306,7 +306,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (page === 'security') renderSecurity(await fetchJSON('content/security.json'));
   if (page === 'pricing') renderPricing(await fetchJSON('content/pricing.json'));
 
-  // Re-apply booking URL / accordion bindings after dynamic content is injected
+  // Re-apply settings (booking URL, etc.) since some buttons/links are created dynamically
+  // by the render functions above and wouldn't have picked up the booking URL otherwise.
+  applySettings(settings);
+
+  // Re-apply accordion bindings after dynamic content is injected
   document.querySelectorAll('.accordion-header').forEach((header) => {
     header.addEventListener('click', () => {
       header.closest('.accordion-item').classList.toggle('open');
