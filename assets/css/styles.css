@@ -175,6 +175,17 @@ img {
   letter-spacing: 0.5px;
 }
 
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: typewriter-blink 0.8s steps(1) infinite;
+}
+
+@keyframes typewriter-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
 .hero-card {
   border-radius: var(--radius-lg);
   overflow: hidden;

@@ -51,6 +51,71 @@ function el(tag, attrs = {}, children = []) {
   return node;
 }
 
+// Turns text like "DATA is KNOWLEDGE/POWER" into a looping typewriter effect:
+// types "DATA is KNOWLEDGE", deletes just the last word, types "DATA is POWER", loops forever.
+function applyTypewriter(node, text) {
+  if (!text) return;
+
+  // Split on "/" to find the alternating words (e.g. "KNOWLEDGE" / "POWER").
+  const segments = text.split('/').map((s) => s.trim()).filter(Boolean);
+  if (segments.length < 2) {
+    node.textContent = text;
+    return;
+  }
+
+  const firstWords = segments[0].split(' ');
+  const loopWords = [firstWords[firstWords.length - 1], ...segments.slice(1)];
+  const prefix = firstWords.slice(0, -1).join(' ') + (firstWords.length > 1 ? ' ' : '');
+
+  node.textContent = '';
+  const prefixSpan = document.createTextNode(prefix);
+  const wordSpan = document.createElement('span');
+  const cursorSpan = document.createElement('span');
+  cursorSpan.className = 'typewriter-cursor';
+  cursorSpan.textContent = '|';
+  node.appendChild(prefixSpan);
+  node.appendChild(wordSpan);
+  node.appendChild(cursorSpan);
+
+  const TYPE_SPEED = 110;
+  const DELETE_SPEED = 60;
+  const HOLD_TIME = 1400;
+  const PAUSE_BEFORE_TYPE = 300;
+
+  let wordIndex = 0;
+
+  function typeWord() {
+    const word = loopWords[wordIndex];
+    let charIndex = 0;
+    (function typeChar() {
+      charIndex++;
+      wordSpan.textContent = word.slice(0, charIndex);
+      if (charIndex < word.length) {
+        setTimeout(typeChar, TYPE_SPEED);
+      } else {
+        setTimeout(deleteWord, HOLD_TIME);
+      }
+    })();
+  }
+
+  function deleteWord() {
+    const word = wordSpan.textContent;
+    let charIndex = word.length;
+    (function deleteChar() {
+      charIndex--;
+      wordSpan.textContent = word.slice(0, charIndex);
+      if (charIndex > 0) {
+        setTimeout(deleteChar, DELETE_SPEED);
+      } else {
+        wordIndex = (wordIndex + 1) % loopWords.length;
+        setTimeout(typeWord, PAUSE_BEFORE_TYPE);
+      }
+    })();
+  }
+
+  typeWord();
+}
+
 function renderHome(data) {
   if (!data) return;
   const heading = document.querySelector('[data-field="hero_heading"]');
@@ -62,7 +127,7 @@ function renderHome(data) {
   const featureGrid = document.querySelector('[data-field="features"]');
 
   if (heading) heading.textContent = data.hero_heading;
-  if (subtitle) subtitle.textContent = data.hero_subtitle;
+  if (subtitle) applyTypewriter(subtitle, data.hero_subtitle);
   if (heroImg) heroImg.src = data.hero_image;
   if (stats1) {
     stats1.innerHTML = '';
