@@ -165,6 +165,7 @@ img {
   font-size: 44px;
   font-weight: 800;
   line-height: 1.15;
+  white-space: pre-line;
   margin: 0 0 16px;
 }
 
