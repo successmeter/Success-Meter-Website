@@ -14,7 +14,8 @@
         { "label": "Track your trends.", "description": "Follow your performance over time against the previous period and the same time last year." },
         { "label": "Turn insight into action.", "description": "AI-led SWOT analysis and strategic planning produce a priority action plan, and you can track progress and revenue reclaimed each week." }
       ],
-      "cta_label": "Schedule a demo"
+      "cta_label": "Schedule a demo",
+      "demo_variant": "revenue"
     },
     {
       "title": "Web Performance Benchmarking\u2122",
@@ -25,7 +26,8 @@
         { "label": "Get plain-language insights.", "description": "For example: \"77% of your sessions are from mobile, so optimise for mobile.\"" },
         { "label": "Plan your digital strategy.", "description": "AI-led SWOT analysis and an action plan based on your web benchmarks." }
       ],
-      "cta_label": "Schedule a demo"
+      "cta_label": "Schedule a demo",
+      "demo_variant": "web"
     },
     {
       "title": "Social Media Suite",
@@ -37,7 +39,8 @@
         { "label": "Published on time.", "description": "Posts go to Instagram, Facebook and TikTok, each with a tracked link to measure results." },
         { "label": "Gets smarter each week.", "description": "Results feed back in, so each week's suggestions improve." }
       ],
-      "cta_label": "Schedule a demo"
+      "cta_label": "Schedule a demo",
+      "demo_variant": "social"
     }
   ]
 }

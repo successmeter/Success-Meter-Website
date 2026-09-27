@@ -70,6 +70,13 @@ collections:
                   - { label: "Bold Lead", name: "label", widget: "string" }
                   - { label: "Detail", name: "description", widget: "text" }
               - { label: "Button Label", name: "cta_label", widget: "string" }
+              - label: "Product Demo"
+                name: "demo_variant"
+                widget: "select"
+                options:
+                  - { label: "Revenue Benchmarking", value: "revenue" }
+                  - { label: "Web Benchmarking", value: "web" }
+                  - { label: "Social Media Suite", value: "social" }
 
   - name: "security"
     label: "Security Page"

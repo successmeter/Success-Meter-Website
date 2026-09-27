@@ -180,7 +180,7 @@ function renderSolutions(data) {
     data.solutions.forEach((s) => {
       list.appendChild(
         el('div', { class: 'solution-block' }, [
-          el('div', {}, [
+          el('div', { class: 'solution-copy' }, [
             el('h3', {}, [document.createTextNode(s.title)]),
             el('p', {}, [document.createTextNode(s.description)]),
             el('ul', {}, (s.bullets || []).map((bullet) =>
@@ -190,7 +190,13 @@ function renderSolutions(data) {
               ])
             )),
           ]),
-          el('div', {}, [
+          el('div', { class: 'solution-demo' }, [
+            el('iframe', {
+              src: 'assets/demos/showcase-loop.html#product=' + encodeURIComponent(s.demo_variant || 'revenue'),
+              title: s.title + ' animated product demo',
+              loading: 'lazy',
+              allow: 'fullscreen',
+            }),
             el('a', { href: 'pricing.html#demo', class: 'btn btn-primary js-book-demo' }, [
               document.createTextNode(s.cta_label || 'Schedule a demo'),
             ]),
