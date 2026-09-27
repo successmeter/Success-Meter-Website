@@ -154,9 +154,8 @@ img {
 }
 
 .hero .container {
-  max-width: 1440px;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 40px;
   align-items: center;
 }
