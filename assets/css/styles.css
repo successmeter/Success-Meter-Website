@@ -408,6 +408,41 @@ section {
   opacity: 0.8;
 }
 
+.security-roadmap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.security-roadmap h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.security-roadmap p,
+.security-roadmap li {
+  color: #555;
+  font-size: 15px;
+}
+
+.security-roadmap ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.security-roadmap li {
+  padding: 5px 0;
+}
+
+.security-roadmap-note {
+  max-width: 1000px;
+  margin: 24px auto 0;
+  color: #737b87;
+  font-size: 13px;
+}
+
 /* ---------- Pricing ---------- */
 .pricing-header {
   max-width: 900px;
@@ -753,6 +788,10 @@ section {
 
   .feature-grid,
   .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-roadmap {
     grid-template-columns: 1fr;
   }
 
