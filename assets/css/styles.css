@@ -427,13 +427,33 @@ section {
   font-size: 15px;
 }
 
-.security-roadmap ul {
-  padding-left: 20px;
-  list-style: disc;
+.security-roadmap-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
 }
 
-.security-roadmap li {
-  padding: 5px 0;
+.security-roadmap-badge {
+  display: inline-flex;
+  min-height: 62px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 14px;
+  border: 1px solid #d9e2ea;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.security-roadmap-badge strong {
+  color: var(--dark);
+  font-size: 14px;
+}
+
+.security-roadmap-badge small {
+  color: #637183;
+  font-size: 11px;
 }
 
 .security-roadmap-note {
