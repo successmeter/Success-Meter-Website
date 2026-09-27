@@ -6,30 +6,38 @@
   "solutions": [
     {
       "title": "Revenue Performance Benchmarking\u2122",
-      "description": "Success Meter's Revenue Performance Benchmarking delivers the Restaurant- and portfolio-level insights needed to make smart, real-time decisions and optimize strategies across functions of sales & marketing, performance management, operations, finance and development.",
+      "description": "Know exactly where your restaurant stands in its market, and what to do about it. Revenue Performance Benchmarking compares your results against a competitive set you choose, then turns the gaps into a clear, prioritised plan.",
+      "bullets": [
+        { "label": "Benchmark the numbers that matter.", "description": "Occupancy, Average Check and RevPAS, each indexed against your market (MPI, ACI and RGI), with your rank in the competitive set." },
+        { "label": "Compare like with like.", "description": "Build your competitive set by restaurant type, cuisine, segment, suburb or specific venues." },
+        { "label": "See the full picture.", "description": "Compare by service (breakfast, lunch, dinner), period (week, month, quarter and year to date), weekday or weekend, events such as Valentine's Day or the AFL Final, and weather." },
+        { "label": "Track your trends.", "description": "Follow your performance over time against the previous period and the same time last year." },
+        { "label": "Turn insight into action.", "description": "AI-led SWOT analysis and strategic planning produce a priority action plan, and you can track progress and revenue reclaimed each week." }
+      ],
       "cta_label": "Schedule a demo"
     },
     {
       "title": "Web Performance Benchmarking\u2122",
-      "description": "Success Meter's Web Performance Benchmarking compares your website, digital marketing and social media performance against the market & industry segments, to determine areas of focus & provides significant help shape informed digital strategies.",
+      "description": "Find out whether your website is winning or losing customers compared with your competitors. Web Performance Benchmarking compares your digital performance with the market and industry segment, and shows where to focus.",
+      "bullets": [
+        { "label": "Compare your traffic.", "description": "Sessions, unique visitors and page views, side by side with your competitive set's average." },
+        { "label": "Understand where visitors come from.", "description": "Organic search, direct, email, paid and social channels, plus new versus returning visitors, device mix and busiest days." },
+        { "label": "Get plain-language insights.", "description": "For example: \"77% of your sessions are from mobile, so optimise for mobile.\"" },
+        { "label": "Plan your digital strategy.", "description": "AI-led SWOT analysis and an action plan based on your web benchmarks." }
+      ],
       "cta_label": "Schedule a demo"
     },
     {
-      "title": "Restaurant RevMAX\u2122",
-      "description": "Success Meter's Revenue management product empowers you by applying data and analytics to predict demand so that you can make informed decisions to create & adjust Promotion strategies, Pricing Strategies, Capacity Optimisation Strategies, and Market Segmentation Strategies.",
+      "title": "Social Media Suite",
+      "description": "Consistent, on-brand social media without the weekly scramble. The Social Media Suite turns your benchmark results into a week of ready-to-approve posts, so every post has a reason behind it.",
+      "bullets": [
+        { "label": "Strategies from your data.", "description": "Post ideas come from your revenue and web benchmarks, for example \"Tuesday revenue is 31% below similar restaurants\", or you can add your own." },
+        { "label": "Drafted every Sunday.", "description": "Posts are written in your brand voice, using your own photos." },
+        { "label": "You stay in control.", "description": "Approve, ask the AI to improve a post, or edit it yourself. Nothing goes out without your yes." },
+        { "label": "Published on time.", "description": "Posts go to Instagram, Facebook and TikTok, each with a tracked link to measure results." },
+        { "label": "Gets smarter each week.", "description": "Results feed back in, so each week's suggestions improve." }
+      ],
       "cta_label": "Schedule a demo"
     }
-  ],
-  "consulting_intro": "Team at Success Meter has an extensive hospitality experience in:",
-  "consulting_experience": [
-    "Strategic planning for Sales & Product optimisation, & revenue maximisation.",
-    "Trends analyses, forecasting & budgeting.",
-    "Market Segment & Distribution Management.",
-    "Digital & Conventional Marketing strategies & management."
-  ],
-  "consulting_offer_intro": "Hence we provide consulting solutions in:",
-  "consulting_offers": [
-    "Transformation Consulting: Enhance Revenue Capabilities & Change readiness (SMTC package).",
-    "Commercial Performance Center: Outsource Product Development, Financial Management & Marketing Functions (SMCPC packages)."
   ]
 }

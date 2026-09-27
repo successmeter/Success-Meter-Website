@@ -126,6 +126,7 @@ function renderHome(data) {
   const heading = document.querySelector('[data-field="hero_heading"]');
   const subtitle = document.querySelector('[data-field="hero_subtitle"]');
   const heroImg = document.querySelector('[data-field="hero_image"]');
+  const featureSubtitle = document.querySelector('[data-field="features_subheading"]');
   const stats1 = document.querySelector('[data-field="stats_line1"]');
   const stats2 = document.querySelector('[data-field="stats_line2"]');
   const stats3 = document.querySelector('[data-field="stats_line3"]');
@@ -134,6 +135,7 @@ function renderHome(data) {
   if (heading) heading.textContent = data.hero_heading;
   if (subtitle) applyTypewriter(subtitle, data.hero_subtitle);
   if (heroImg) heroImg.src = data.hero_image;
+  if (featureSubtitle) featureSubtitle.textContent = data.features_subheading || '';
   if (stats1) {
     stats1.innerHTML = '';
     stats1.appendChild(el('strong', {}, [document.createTextNode(data.stats_line1_bold)]));
@@ -161,10 +163,6 @@ function renderSolutions(data) {
   const lead1 = document.querySelector('[data-field="hero_lead1"]');
   const lead2 = document.querySelector('[data-field="hero_lead2"]');
   const list = document.querySelector('[data-field="solutions"]');
-  const consultingIntro = document.querySelector('[data-field="consulting_intro"]');
-  const consultingExperience = document.querySelector('[data-field="consulting_experience"]');
-  const consultingOfferIntro = document.querySelector('[data-field="consulting_offer_intro"]');
-  const consultingOffers = document.querySelector('[data-field="consulting_offers"]');
 
   if (heading) heading.textContent = data.hero_heading;
   if (lead1) applyTypewriter(lead1, data.hero_lead1);
@@ -185,6 +183,12 @@ function renderSolutions(data) {
           el('div', {}, [
             el('h3', {}, [document.createTextNode(s.title)]),
             el('p', {}, [document.createTextNode(s.description)]),
+            el('ul', {}, (s.bullets || []).map((bullet) =>
+              el('li', {}, [
+                el('strong', {}, [document.createTextNode(bullet.label)]),
+                document.createTextNode(' ' + bullet.description),
+              ])
+            )),
           ]),
           el('div', {}, [
             el('a', { href: 'pricing.html#demo', class: 'btn btn-primary js-book-demo' }, [
@@ -196,20 +200,6 @@ function renderSolutions(data) {
     });
   }
 
-  if (consultingIntro) consultingIntro.textContent = data.consulting_intro;
-  if (consultingExperience && Array.isArray(data.consulting_experience)) {
-    consultingExperience.innerHTML = '';
-    data.consulting_experience.forEach((item) => {
-      consultingExperience.appendChild(el('li', {}, [document.createTextNode(item)]));
-    });
-  }
-  if (consultingOfferIntro) consultingOfferIntro.textContent = data.consulting_offer_intro;
-  if (consultingOffers && Array.isArray(data.consulting_offers)) {
-    consultingOffers.innerHTML = '';
-    data.consulting_offers.forEach((item) => {
-      consultingOffers.appendChild(el('li', {}, [document.createTextNode(item)]));
-    });
-  }
 }
 
 function renderSecurity(data) {
@@ -254,32 +244,34 @@ function renderSecurity(data) {
 
 function renderPricing(data) {
   if (!data) return;
-  const introHeading = document.querySelector('[data-field="intro_heading"]');
-  const introText = document.querySelector('[data-field="intro_text"]');
-  const stepsHeading = document.querySelector('[data-field="steps_heading"]');
-  const noteText = document.querySelector('[data-field="note_text"]');
+  const pageHeading = document.querySelector('[data-field="page_heading"]');
+  const pageSubtitle = document.querySelector('[data-field="page_subtitle"]');
   const grid = document.querySelector('[data-field="plans"]');
+  const packageOffer = document.querySelector('[data-field="package_offer"]');
 
-  if (introHeading) introHeading.textContent = data.intro_heading;
-  if (introText) introText.textContent = data.intro_text;
-  if (stepsHeading) stepsHeading.textContent = data.steps_heading;
-  if (noteText) noteText.textContent = data.note_text;
+  if (pageHeading) pageHeading.textContent = data.page_heading;
+  if (pageSubtitle) pageSubtitle.textContent = data.page_subtitle;
 
   if (grid && Array.isArray(data.plans)) {
     grid.innerHTML = '';
     data.plans.forEach((plan) => {
-      const priceTagChildren = [el('span', { class: 'dollar' }, [document.createTextNode('$')])];
+      const priceTagChildren = [];
       if (plan.price !== null && plan.price !== undefined) {
+        priceTagChildren.push(el('span', { class: 'dollar' }, [document.createTextNode('$')]));
         priceTagChildren.push(el('span', { class: 'amount' }, [document.createTextNode(String(plan.price))]));
       }
       priceTagChildren.push(el('span', { class: 'period' }, [document.createTextNode(plan.period)]));
 
-      const ul = el('ul', {}, (plan.features || []).map((f) => el('li', {}, [document.createTextNode(f)])));
+      const ul = el('ul', {}, (plan.features || []).map((feature) => el('li', {}, [document.createTextNode(feature)])));
       if (plan.total_value) {
-        ul.appendChild(el('li', { class: 'total' }, [document.createTextNode(plan.total_value)]));
+        ul.appendChild(el('li', { class: 'total' }, [
+          el('span', {}, [document.createTextNode('Total value offered')]),
+          el('strong', {}, [document.createTextNode(plan.total_value)]),
+        ]));
       }
 
       const cardChildren = [
+        el('span', { class: 'price-tier' }, [document.createTextNode(plan.tier || '')]),
         el('h3', {}, [document.createTextNode(plan.title)]),
         el('div', { class: 'price-tag' }, priceTagChildren),
         ul,
@@ -293,6 +285,21 @@ function renderPricing(data) {
 
       grid.appendChild(el('div', { class: 'price-card' }, cardChildren));
     });
+  }
+
+  if (packageOffer && data.package_offer) {
+    const offer = data.package_offer;
+    packageOffer.querySelector('[data-field="package_tier"]').textContent = offer.tier;
+    packageOffer.querySelector('[data-field="package_title"]').textContent = offer.title;
+    packageOffer.querySelector('[data-field="package_description"]').textContent = offer.description;
+    packageOffer.querySelector('[data-field="package_products"]').replaceChildren(
+      ...(offer.products || []).map((product) => el('li', {}, [document.createTextNode(product)]))
+    );
+    packageOffer.querySelector('[data-field="package_savings"]').textContent = offer.savings;
+    packageOffer.querySelector('[data-field="package_price"]').textContent = String(offer.price);
+    packageOffer.querySelector('[data-field="package_period"]').textContent = offer.period;
+    packageOffer.querySelector('[data-field="package_cta"]').textContent = offer.cta_label || 'Book a demo';
+    packageOffer.querySelector('[data-field="package_disclaimer"]').textContent = offer.disclaimer;
   }
 }
 
